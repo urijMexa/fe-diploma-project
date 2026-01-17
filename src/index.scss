@@ -1,0 +1,53 @@
+:root {
+  --color-orange: #FFA800;
+  --color-orange-hover: #EDA500;
+  --color-dark: #292929;
+  --color-gray: #9299A2;
+  --color-gray-light: #E5E5E5;
+  --color-bg: #F4F3F6;
+  --color-white: #FFFFFF;
+  --color-text-main: #292929;
+  --font-main: 'Roboto', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  outline: none;
+}
+
+input {
+  font-family: inherit;
+  outline: none;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
