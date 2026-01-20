@@ -14,8 +14,8 @@ export const fetchSeats = createAsyncThunk(
 );
 
 const initialState = {
-    trainId: null,      // ID выбранного поезда
-    coaches: [],        // Список вагонов
+    trainId: null,
+    coaches: [],
     loading: false,
     error: null,
 };

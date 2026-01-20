@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { getCities } from '../../api/api';
 
-// Асинхронный запрос за городами
 export const fetchCities = createAsyncThunk(
     'search/fetchCities',
     async (search, { rejectWithValue }) => {

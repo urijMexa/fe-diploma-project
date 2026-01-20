@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { getRoutes } from '../../api/api';
 
-// Асинхронный запрос за билетами
 export const fetchRoutes = createAsyncThunk(
     'trains/fetchRoutes',
     async (searchParams, { rejectWithValue }) => {
@@ -15,8 +14,8 @@ export const fetchRoutes = createAsyncThunk(
 );
 
 const initialState = {
-    items: [],      // Список поездов
-    totalCount: 0,  // Сколько всего найдено
+    items: [],
+    totalCount: 0,
     loading: false,
     error: null,
 };
