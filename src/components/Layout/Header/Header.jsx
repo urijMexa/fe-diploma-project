@@ -5,18 +5,25 @@ import styles from './Header.module.scss';
 const Header = () => {
     return (
         <header className={styles.header}>
-            <div className="container">
-                <nav className={styles.nav}>
+            <div className={styles.logoRow}>
+                <div className="container">
                     <Link to="/" className={styles.logo}>
                         Лого
                     </Link>
-                    <ul className={styles.menu}>
-                        <li><a href="#about">О нас</a></li>
-                        <li><a href="#how-it-works">Как это работает</a></li>
-                        <li><a href="#reviews">Отзывы</a></li>
-                        <li><a href="#contacts">Контакты</a></li>
-                    </ul>
-                </nav>
+                </div>
+            </div>
+
+            <div className={styles.navRow}>
+                <div className="container">
+                    <nav className={styles.nav}>
+                        <ul className={styles.menu}>
+                            <li><a href="#about">О нас</a></li>
+                            <li><a href="#how-it-works">Как это работает</a></li>
+                            <li><a href="#reviews">Отзывы</a></li>
+                            <li><a href="#contacts">Контакты</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </header>
     );

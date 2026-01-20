@@ -1,0 +1,14 @@
+.page { background: #F4F3F6; min-height: 100vh; padding-bottom: 50px; }
+.topBanner { background: url('../../assets/images/hero.jpg') center/cover; height: 350px; position: relative; &::after { content:''; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); } }
+.layout { display: flex; gap: 30px; margin-top: 50px; }
+.main { flex: 1; }
+.whiteBox { background: #fff; border: 1px solid #C4C4C4; }
+.sectionTitle { padding: 30px 40px; font-size: 24px; color: #292929; }
+.body { padding: 0 40px 40px; }
+.row { display: flex; gap: 30px; margin-bottom: 25px; }
+.inputGroup { display: flex; flex-direction: column; gap: 10px; flex: 1; input { padding: 15px; border: 1px solid #9299A2; border-radius: 5px; } }
+.payOption { display: flex; align-items: center; gap: 15px; font-size: 24px; font-weight: 700; color: #9299A2; input { width: 25px; height: 25px; } }
+.payRow { display: flex; gap: 60px; margin-top: 20px; font-size: 18px; }
+.nextBtn { background: #FFA800; color: #fff; border: none; padding: 15px 80px; border-radius: 5px; float: right; font-weight: 700; cursor: pointer; margin-top: 40px; text-transform: uppercase; }
+.payBlock.disabled { opacity: 0.4; pointer-events: none; filter: grayscale(1); }
+.payOption span { cursor: pointer; }

@@ -1,0 +1,89 @@
+.page { background: #F4F3F6; min-height: 100vh; padding-bottom: 50px; }
+.topBanner { background: url('../../assets/images/hero.jpg') center/cover; height: 350px; position: relative; &::after { content:''; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); } }
+.layout { display: flex; gap: 30px; margin-top: 50px; }
+.main { flex: 1; }
+.card { background: #fff; border: 1px solid #C4C4C4; box-shadow: 0 4px 4px rgba(0,0,0,0.25); margin-bottom: 40px; }
+.cardHeader { padding: 25px; border-bottom: 1px solid #C4C4C4; font-size: 24px; display: flex; align-items: center; .toggle { border: 1px solid #9299A2; border-radius: 50%; width: 25px; height: 25px; display: flex; align-items: center; justify-content: center; margin-right: 15px; cursor: pointer; color: #9299A2; } .close { margin-left: auto; color: #9299A2; cursor: pointer; font-size: 30px; } }
+.cardBody { padding: 30px; }
+.selectType { padding: 10px; border: 1px solid #9299A2; border-radius: 5px; width: 220px; margin-bottom: 30px; }
+.row { display: flex; gap: 30px; margin-bottom: 30px; }
+.inputGroup { display: flex; flex-direction: column; gap: 10px; flex: 1; label { color: #292929; } input, select { padding: 15px; border: 1px solid #9299A2; border-radius: 5px; } }
+.genderBlock { label { display: block; margin-bottom: 10px; } }
+.genderBtns { display: flex; border: 1px solid #9299A2; border-radius: 5px; overflow: hidden; width: 150px; button { flex: 1; padding: 15px; background: #fff; border: none; font-weight: 700; &.active { background: #FFA800; } } }
+.checkRow { display: flex; align-items: center; gap: 10px; margin-bottom: 30px; input { width: 20px; height: 20px; } }
+.docSection { display: flex; gap: 30px; border-top: 1px dashed #9299A2; padding-top: 30px; }
+.cardFooter { display: flex; justify-content: flex-end; margin-top: 30px; border-top: 1px solid #C4C4C4; padding-top: 20px; }
+.addNextBtn { border: 1px solid #292929; background: transparent; padding: 15px 30px; border-radius: 5px; font-weight: 700; cursor: pointer; }
+.addSection { background: #fff; padding: 30px; border: 1px solid #C4C4C4; display: flex; justify-content: space-between; align-items: center; font-size: 24px; margin-bottom: 40px; .plusBtn { background: transparent; border: 1px solid #FFA800; color: #FFA800; border-radius: 50%; width: 30px; height: 30px; font-size: 24px; cursor: pointer; } }
+.nextBtn { background: #FFA800; color: #fff; border: none; padding: 15px 80px; border-radius: 5px; float: right; font-weight: 700; cursor: pointer; }
+/* ... существующие стили ... */
+
+.statusBar {
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 16px;
+  margin: 0 -30px -30px -30px; // Растягиваем на всю ширину карточки
+}
+
+.errorBar {
+  @extend .statusBar;
+  background-color: #FFB7A2; // Светло-красный из скрина
+  color: #292929;
+  border-top: 1px dashed #FF5C5C;
+
+  .errorIcon {
+    width: 35px;
+    height: 35px;
+    background: #fff;
+    color: #FFB7A2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+}
+
+.successBar {
+  @extend .statusBar;
+  background-color: #B2F2A2; // Светло-зеленый из скрина
+  color: #fff;
+  justify-content: space-between;
+
+  .successInfo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #fff;
+    font-weight: 400;
+  }
+
+  .checkIcon {
+    width: 35px;
+    height: 35px;
+    background: #fff;
+    color: #B2F2A2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+
+  .nextPassBtn {
+    background: transparent;
+    border: 1px solid #292929;
+    padding: 10px 25px;
+    border-radius: 5px;
+    color: #292929;
+    font-weight: 700;
+    cursor: pointer;
+  }
+}
+
+.inputError {
+  border-color: #FF5C5C !important;
+  color: #FF5C5C !important;
+}

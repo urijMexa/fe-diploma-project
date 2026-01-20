@@ -1,11 +1,23 @@
 import React from 'react';
+import SearchForm from '../../components/Search/SearchForm/SearchForm';
+import About from './components/About';
+import HowItWorks from './components/HowItWorks';
+import Reviews from './components/Reviews';
+import styles from './HomePage.module.scss';
 
 const HomePage = () => {
     return (
-        <div style={{ minHeight: '500px', padding: '50px' }} className="container">
-            <h1>Главная страница</h1>
-            <p>Здесь будет поиск билетов и блоки "О нас", "Отзывы".</p>
-        </div>
+        <>
+            <section className={styles.hero}>
+                <div className="container">
+                    <SearchForm />
+                </div>
+            </section>
+
+            <About />
+            <HowItWorks />
+            <Reviews />
+        </>
     );
 };
 

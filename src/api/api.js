@@ -1,37 +1,46 @@
 import axios from 'axios';
+import { cities, trains, seatsData } from './mockData';
 
 const api = axios.create({
     baseURL: 'https://netology-trainbooking.netoservices.ru',
 });
 
+
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
 export const getCities = async (name) => {
-    const response = await api.get(`/routes/cities?name=${name}`);
-    return response.data;
+    await delay(300);
+    return cities.filter(city => city.name.toLowerCase().includes(name.toLowerCase()));
 };
 
 export const getLastTickets = async () => {
-    const response = await api.get('/routes/last');
-    return response.data;
+    await delay(300);
+    return trains.items.slice(0, 3);
 };
 
 export const getRoutes = async (params) => {
-    const response = await api.get('/routes', { params });
-    return response.data;
+    await delay(500);
+    console.log('API getRoutes params:', params);
+    return trains;
 };
 
 export const getSeats = async (id, params) => {
-    const response = await api.get(`/routes/${id}/seats`, { params });
-    return response.data;
+    await delay(500);
+    console.log('API getSeats:', id, params);
+    return seatsData;
 };
 
 export const orderTickets = async (data) => {
-    const response = await api.post('/order', data);
-    return response.data;
+    await delay(1000);
+    console.log('API orderTickets:', data);
+    return { status: true };
 };
 
 export const subscribeToNewsletter = async (email) => {
-    const response = await api.post('/subscribe', { email });
-    return response.data;
+    await delay(500);
+    console.log('API subscribe:', email);
+    return { status: true };
 };
 
 export default api;
+

@@ -1,15 +1,34 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { getCities } from '../../api/api';
+
+// Асинхронный запрос за городами
+export const fetchCities = createAsyncThunk(
+    'search/fetchCities',
+    async (search, { rejectWithValue }) => {
+        try {
+            const data = await getCities(search);
+            return data;
+        } catch (error) {
+            return rejectWithValue(error.response.data);
+        }
+    }
+);
 
 const initialState = {
     route: {
         from_city_id: null,
         to_city_id: null,
-        date_start: null,
-        date_end: null,
+        date_start: '',
+        date_end: '',
     },
     cities: {
         from: null,
         to: null,
+    },
+    autocomplete: {
+        items: [],
+        loading: false,
+        error: null,
     }
 };
 
@@ -19,11 +38,11 @@ const searchSlice = createSlice({
     reducers: {
         setCityFrom: (state, action) => {
             state.cities.from = action.payload;
-            state.route.from_city_id = action.payload?._id || null;
+            state.route.from_city_id = action.payload._id;
         },
         setCityTo: (state, action) => {
             state.cities.to = action.payload;
-            state.route.to_city_id = action.payload?._id || null;
+            state.route.to_city_id = action.payload._id;
         },
         setDateStart: (state, action) => {
             state.route.date_start = action.payload;
@@ -31,18 +50,29 @@ const searchSlice = createSlice({
         setDateEnd: (state, action) => {
             state.route.date_end = action.payload;
         },
-        swapCities: (state) => {
-            const tempCity = state.cities.from;
-            state.cities.from = state.cities.to;
-            state.cities.to = tempCity;
-
-            const tempId = state.route.from_city_id;
-            state.route.from_city_id = state.route.to_city_id;
-            state.route.to_city_id = tempId;
+        clearAutocomplete: (state) => {
+            state.autocomplete.items = [];
         },
+        // ВОТ ТО, ЧТО МЫ ДОБАВИЛИ ОБРАТНО:
         clearSearch: (state) => {
-            return initialState;
+            state.cities = { from: null, to: null };
+            state.route = { from_city_id: null, to_city_id: null, date_start: '', date_end: '' };
         }
+    },
+    extraReducers: (builder) => {
+        builder
+            .addCase(fetchCities.pending, (state) => {
+                state.autocomplete.loading = true;
+                state.autocomplete.error = null;
+            })
+            .addCase(fetchCities.fulfilled, (state, action) => {
+                state.autocomplete.loading = false;
+                state.autocomplete.items = action.payload;
+            })
+            .addCase(fetchCities.rejected, (state, action) => {
+                state.autocomplete.loading = false;
+                state.autocomplete.error = action.payload;
+            });
     },
 });
 
@@ -51,8 +81,8 @@ export const {
     setCityTo,
     setDateStart,
     setDateEnd,
-    swapCities,
-    clearSearch
+    clearAutocomplete,
+    clearSearch // Не забудь экспортировать!
 } = searchSlice.actions;
 
 export default searchSlice.reducer;

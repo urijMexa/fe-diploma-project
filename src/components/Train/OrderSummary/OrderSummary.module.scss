@@ -1,0 +1,29 @@
+.sidebar { background-color: #3E3C41; color: #fff; width: 300px; flex-shrink: 0; }
+.header { padding: 20px; font-size: 24px; text-transform: uppercase; border-bottom: 1px solid #E5E5E5; }
+.section { padding: 25px 20px; border-bottom: 1px solid #5D5B61; }
+
+.titleRow { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.mainTitle { font-size: 18px; font-weight: 700; i { color: #FFA800; margin-right: 10px; } }
+.date { color: #9299A2; font-size: 14px; }
+
+.infoRow {
+  display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 14px;
+  span { color: #9299A2; }
+  .routeName { text-align: right; line-height: 1.2; color: #fff; }
+}
+
+.timeContainer {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  .point {
+    display: flex;
+    gap: 15px;
+    strong { font-size: 18px; width: 55px; }
+    .stationInfo { font-size: 14px; line-height: 1.2; small { color: #9299A2; } }
+  }
+  .duration { padding-left: 70px; color: #FFA800; font-weight: 700; font-size: 16px; margin: 5px 0; }
+}
+
+.footer { padding: 25px 20px; display: flex; justify-content: space-between; align-items: center; .total { font-size: 28px; font-weight: 700; color: #FFA800; } }

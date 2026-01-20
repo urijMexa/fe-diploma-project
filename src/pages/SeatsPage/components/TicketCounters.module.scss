@@ -1,0 +1,19 @@
+.wrapper {
+  padding: 30px 40px;
+  border-top: 1px dashed #E5E5E5;
+}
+.title { font-size: 24px; font-weight: 700; margin-bottom: 20px; }
+.row { display: flex; gap: 30px; align-items: flex-start; }
+.counterField {
+  flex: 1;
+  input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #9299A2;
+    border-radius: 5px;
+    font-size: 18px;
+    outline: none;
+  }
+  p { font-size: 14px; color: #9299A2; margin-top: 10px; line-height: 1.4; }
+  &.active input { border-color: #FFA800; }
+}

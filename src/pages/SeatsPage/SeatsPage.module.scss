@@ -1,0 +1,66 @@
+.page { background-color: #F4F3F6; min-height: 100vh; }
+.darkHeader { height: 150px; background: #292929; margin-bottom: -150px; position: relative; z-index: 1; }
+.layout { display: flex; gap: 40px; margin-top: 50px; position: relative; z-index: 2; }
+.mainContent { flex: 1; }
+.pageTitle { font-size: 30px; margin-bottom: 30px; }
+.whiteBox { background: #fff; border: 1px solid #E5E5E5; padding: 0; }
+
+.sectionTitle { font-size: 24px; font-weight: 700; padding: 30px 40px; border-top: 1px dashed #E5E5E5; }
+
+.countersRow { display: flex; gap: 30px; padding: 0 40px 40px; }
+.counterItem { border: 1px solid #9299A2; padding: 15px 25px; border-radius: 5px; min-width: 200px; }
+
+.typesRow { display: flex; justify-content: space-around; padding: 0 40px 40px; }
+.typeTab {
+  display: flex; flex-direction: column; align-items: center; color: #9299A2; gap: 10px; cursor: pointer;
+  i { font-size: 40px; }
+  &.active { color: #FFA800; }
+}
+
+.nextBtn {
+  background: #FFA800; border: none; padding: 15px 60px; font-weight: 700; border-radius: 5px;
+  float: right; margin: 40px 0; cursor: pointer;
+}
+.coachesList {
+  background-color: #F4F3F6;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.topBanner {
+  background: url('../../assets/images/hero.jpg') center/cover;
+  min-height: 300px;
+}
+.whitePaper {
+  background: #fff;
+  border: 1px solid #E5E5E5;
+}
+.typesRow {
+  display: flex; justify-content: space-around; padding: 20px 40px 40px;
+  border-bottom: 1px solid #F4F3F6;
+}
+
+.typeTab {
+  display: flex; flex-direction: column; align-items: center; cursor: pointer;
+  color: #9299A2; transition: 0.3s;
+
+  .typeIcon {
+    font-size: 44px; margin-bottom: 10px;
+  }
+
+  span { font-size: 18px; }
+
+  &.active {
+    color: #FFA800;
+    .typeIcon { color: #FFA800; }
+  }
+
+  &:hover:not(.active) { color: #292929; }
+}
+
+.emptyMsg { padding: 40px; text-align: center; color: #9299A2; font-size: 18px; }
+.wagonNumbersRow {
+  padding: 10px 40px; font-size: 16px;
+  span { font-weight: 700; margin: 0 10px; color: #FFA800; cursor: pointer; }
+}
